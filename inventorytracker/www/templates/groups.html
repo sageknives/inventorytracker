@@ -1,0 +1,15 @@
+<ion-view view-title="Groups">
+  <ion-content>
+    <ion-list>
+      <ion-item class="list-item" ng-repeat="group in groups" ng-click="go('/app/groups/{{group.id}}')">
+        <img class="list-img" src="{{imgUrl}}{{group.img}}"/><span class="list-txt">{{group.name}}</span>
+        <img ng-click="popUpMenu($event)" class="list-ellipsis" src="img/list-ellipsis.png"/>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+		<div class="button-bar">
+			<a ng-click="addCollection()" class="button">Add Collection</a>
+		</div>
+   </div>
+</ion-view>

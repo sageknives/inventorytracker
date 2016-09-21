@@ -1,0 +1,36 @@
+<ion-view view-title="{{item.name}}">
+  <ion-content>
+    <h1 class="center">{{item.name}}</h1>
+    <img class="center" src="{{imgUrl}}{{item.img}}"/>
+    <p class="center button button-clear footer-button">{{item.description}}</p>
+    <p class="center">There are {{item.count}} {{item.measurement}} of {{item.name}} currently.</p>
+    <label class="item item-input">
+	  <span class="input-label">Count</span>
+	  <input ng-model="item.tempCount" type="number">
+	</label>
+	<ion-list>
+  		<ion-checkbox ng-model="item.isRestock">Is Restock</ion-checkbox>
+	</ion-list>
+	<button ng-click="updateItemCount()" class="button button-block button-positive">
+		Update Count
+	</button>
+	<ion-list>
+      <ion-item class="item item-text-wrap" ng-repeat="log in item.logs">
+	      <img class="list-img" src="{{imgUrl}}{{log.userImg}}"/>
+	      <p ng-if="log.isRestock == 1"class="log-txt">
+	      	{{log.firstName}} {{log.lastName}} restocked {{log.objectValue}} {{item.name}} {{item.measurement}} on {{log.timeStamp | date: "MMM d, y h:mm a"}}.
+	      </p>
+	      <p ng-if="log.isRestock == 0"class="log-txt">
+	      	{{log.firstName}} {{log.lastName}} updated the count of {{item.name}} to {{log.objectValue}} {{item.measurement}} on {{log.timeStamp | date: "MMM d, y h:mm a"}}.
+	      </p>
+      </ion-item>
+    </ion-list>
+    <a ng-if="item.logs === null" class="button button-clear footer-button">No logs found.</a>
+	<br/><br/><br/>
+  </ion-content>
+  	<div class="bar bar-footer bar-balanced">
+		<div class="button-bar">
+	  		<a ng-click="showLogs()" class="button">Show Logs</a>
+		</div>
+	</div>
+</ion-view>

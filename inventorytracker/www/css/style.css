@@ -1,0 +1,49 @@
+/* Empty. Add your own CSS if you like */
+a.list-item {
+	padding:0;
+}
+.list-ellipsis, .list-img {
+	display:inline-block;
+	width:15vw;
+	height:15vw;
+	margin:-15px;
+	padding:6px 7px;
+	outline:0;
+}
+.list-ellipsis{
+	
+}
+.list-img{
+}
+.list-txt {
+	display:inline-block;
+	width:76vw;
+	padding-left:8vw;
+	font-size: 18px;
+}
+.log-txt {
+	display:inline-block;
+	width:77vw;
+	padding-left:8vw;
+	font-size: 12px;
+}
+.list-date {
+	font-size: 12px;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.keyboard-open .tabs{
+  display:none;
+  }
+.keyboard-open .has-tabs{
+ 	bottom:0;
+ }
+ .keyboard-open .bar-footer{
+ 	display:none;
+ 	bottom:0;
+ }

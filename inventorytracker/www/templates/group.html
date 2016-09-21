@@ -1,0 +1,17 @@
+<ion-view view-title="{{group.name}}">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="categories in group.categories" ng-click="go('/app/groups/{{group.id}}/categories/{{categories.id}}')">
+      <img class="list-img" src="{{imgUrl}}{{categories.img}}"/><span class="list-txt">{{categories.name}}</span>
+      <img ng-click="popUpMenu($event)" class="list-ellipsis" src="img/list-ellipsis.png"/>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+		<div class="button-bar">
+			<a ng-click="addCategory()" class="button">Add Category</a>
+			<a ng-click="editCollection()" class="button">Edit {{group.name}}</a>
+	  		<a ng-click="go('/app/groups/{{group.id}}/users')" class="button">Users</a>
+		</div>
+   </div>
+</ion-view>

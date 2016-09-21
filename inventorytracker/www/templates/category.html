@@ -1,0 +1,16 @@
+<ion-view view-title="{{category.name}}">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="items in category.items" ng-click="go('/app/groups/{{thisGroupId}}/categories/{{thisCategoryId}}/items/{{items.id}}')")>
+        <img class="list-img" src="{{imgUrl}}{{items.img}}"/><span class="list-txt">{{items.count}} {{items.measurement}} of {{items.name}}<br/><span class="list-date">{{items.lastUpdated | date: "MMM d, y h:mm a"}}</span></span>
+        <img ng-click="popUpMenu($event)" class="list-ellipsis" src="img/list-ellipsis.png"/>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+		<div class="button-bar">
+			<a ng-click="addItem()" class="button">Add Item</a>
+			<a ng-click="editCategory()" class="button">Edit {{category.name}}</a>
+		</div>
+   </div>
+</ion-view>

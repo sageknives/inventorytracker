@@ -1,0 +1,10 @@
+<ion-view view-title="{{group.name}} Users">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="user in users">
+      <img class="list-img" src="{{imgUrl}}{{user.img}}"/><span class="list-txt">{{user.firstName}} {{user.lastName}}</span>
+      <img ng-click="popUpMenu($event)" class="list-ellipsis" src="img/list-ellipsis.png"/>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
